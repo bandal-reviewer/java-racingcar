@@ -10,5 +10,8 @@ public class RaceController {
     public void run() {
         outputView.outputCarNames();
         String[] carNames = inputView.inputCarNames();
+
+        outputView.outputTryCount();
+        String tryCount = inputView.inputTryCount();
     }
 }

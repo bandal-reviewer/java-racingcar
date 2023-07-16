@@ -8,4 +8,8 @@ public class InputView {
     public String[] inputCarNames() {
         return scanner.nextLine().split(CLASSIFICATION_SYMBOL);
     }
+
+    public String inputTryCount() {
+        return scanner.nextLine();
+    }
 }
