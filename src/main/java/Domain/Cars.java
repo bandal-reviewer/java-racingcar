@@ -7,7 +7,6 @@ import java.util.List;
 public class Cars {
     private static final String CLASSIFICATION_SYMBOL = ",";
 
-    private final Car car = new Car();
     private final RandomNumber randomNumber = new RandomNumber();
 
     private final List<Car> cars;
@@ -25,7 +24,7 @@ public class Cars {
     public List<Car> generateCars(List<String> carNameList) {
         List<Car> cars = new ArrayList<>();
         for (String carName : carNameList) {
-            cars.add(car.from(carName.trim()));
+            cars.add(new Car(carName.trim()));
         }
         return cars;
     }
