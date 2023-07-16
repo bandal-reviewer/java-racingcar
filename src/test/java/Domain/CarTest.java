@@ -35,7 +35,7 @@ public class CarTest {
                 .hasMessageContaining("[Error]");
     }
 
-    @DisplayName("자동차는 전진할 수 있다.")
+    @DisplayName("자동차는 4 이상의 값을 받으면 전진할 수 있다.")
     @Test
     public void carMoveTest() {
         // given
@@ -43,7 +43,7 @@ public class CarTest {
         final Car car = new Car("메르세데스");
 
         // when
-        car.move();
+        car.move(4);
 
         // then
         assertThat(car.position).isEqualTo(position);
