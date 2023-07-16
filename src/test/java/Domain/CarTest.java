@@ -35,6 +35,17 @@ public class CarTest {
                 .hasMessageContaining("[Error]");
     }
 
+    @DisplayName("자동차의 이름은 공백일 수 없다.")
+    @Test
+    public void carNameEmptyTest() {
+        // given
+        // when
+        // then
+        assertThatThrownBy(() -> new Car("  "))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("[Error]");
+    }
+
     @DisplayName("자동차는 4 이상의 값을 받으면 전진할 수 있다.")
     @Test
     public void carMoveTest() {
