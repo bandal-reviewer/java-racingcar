@@ -14,7 +14,7 @@ public class CarsTest {
 
     @DisplayName("자동차 이름은 쉼표(,)로 구분할 수 있다.")
     @Test
-    public void carsTest1() {
+    public void carsClassificationSymbolTest() {
         // given
         final String carNames = "메르세데스,포르쉐,아반떼";
         final List<Car> carNameList = new ArrayList<>(Arrays.asList(
