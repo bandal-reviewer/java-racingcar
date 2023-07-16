@@ -23,7 +23,9 @@ public class Winner {
                 .orElse(MIN_POSITION);
     }
 
-    public List<Car> getWinner() {
-        return winner;
+    public List<String> getWinnerName() {
+        return winner.stream()
+                .map(Car::getName)
+                .collect(Collectors.toList());
     }
 }

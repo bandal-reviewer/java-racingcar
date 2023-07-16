@@ -40,7 +40,7 @@ public class RaceController {
             cars.moveAll();
             outputView.outputResult(cars);
         }
-        outputView.outputWinner(getWinner(cars).getWinner());
+        outputView.outputWinner(getWinner(cars));
     }
 
     public Winner getWinner(Cars cars) {
