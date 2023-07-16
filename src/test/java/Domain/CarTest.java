@@ -45,7 +45,7 @@ public class CarTest {
         final Car testCar = car.from("메르세데스");
 
         // when
-        car.move(4);
+        testCar.move(4);
 
         // then
         assertThat(testCar.position).isEqualTo(position);
