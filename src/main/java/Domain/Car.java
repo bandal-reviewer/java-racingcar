@@ -26,4 +26,8 @@ public class Car {
         if (randomNumber >= MIN_RANDOM_NUMBER)
             this.position += CAR_MOVE_LENGTH;
     }
+
+    public int getPosition() {
+        return position;
+    }
 }

@@ -1,11 +1,25 @@
 package Domain;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Winner {
-    final List<Car> winner;
+    private static final int MIN_POSITION = 0;
 
-    public Winner(List<Car> winner) {
-        this.winner = winner;
+    final List<Car> winner;
+    final int maxPosition;
+
+    public Winner(List<Car> cars) {
+        this.maxPosition = getMaxPosition(cars);
+        this.winner = cars.stream()
+                .filter(car -> car.getPosition() == maxPosition)
+                .collect(Collectors.toList());
+    }
+
+    public int getMaxPosition(List<Car> cars) {
+        return cars.stream()
+                .mapToInt(Car::getPosition)
+                .max()
+                .orElse(MIN_POSITION);
     }
 }
