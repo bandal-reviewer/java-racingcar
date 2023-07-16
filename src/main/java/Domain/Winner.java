@@ -1,10 +1,11 @@
 package Domain;
 
+import java.util.List;
+
 public class Winner {
+    final List<Car> winner;
 
-    final String name;
-
-    public Winner(String name) {
-        this.name = name;
+    public Winner(List<Car> winner) {
+        this.winner = winner;
     }
 }
