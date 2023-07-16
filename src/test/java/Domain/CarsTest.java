@@ -29,4 +29,19 @@ public class CarsTest {
         // then
         assertThat(cars.getCars()).isEqualTo(carNameList);
     }
+
+
+    @DisplayName("주어진 횟수 동안 자동차는 전진 또는 멈출 수 있다.")
+    @Test
+    public void carsRaceTest() {
+        // given
+        final Cars cars = new Cars("메르세데스,포르쉐,아반떼");
+        final int tryCount = 5;
+
+        // when
+        final Result result = new Result(tryCount, cars);
+
+        // then
+        assertThat(result.results.size()).isEqualTo(tryCount);
+    }
 }
