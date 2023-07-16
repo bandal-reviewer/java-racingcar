@@ -1,4 +1,5 @@
-import Domain.Car;
+package Domain;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -34,7 +35,17 @@ public class CarTest {
                 .hasMessageContaining("[Error]");
     }
 
-//    @DisplayName("")
-//    @Test
-//    public void
+    @DisplayName("자동차는 전진할 수 있다.")
+    @Test
+    public void carMoveTest() {
+        // given
+        final int position = 1;
+        final Car car = new Car("메르세데스");
+
+        // when
+        car.move();
+
+        // then
+        assertThat(car.position).isEqualTo(position);
+    }
 }
