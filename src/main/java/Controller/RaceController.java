@@ -1,7 +1,7 @@
 package Controller;
 
 import Domain.Cars;
-import Domain.Result;
+import Domain.Results;
 import Domain.TryCount;
 import View.InputView;
 import View.OutputView;
@@ -21,7 +21,8 @@ public class RaceController {
     public void startRacing() {
         Cars cars = getCars();
         int tryCount = getTryCount();
-        Result result = new Result(tryCount, cars);
+        Results results = new Results(tryCount, cars);
+        outputView.outputResult(results);
     }
 
     public Cars getCars() {
