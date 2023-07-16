@@ -2,6 +2,7 @@ package Controller;
 
 import Domain.Cars;
 import Domain.TryCount;
+import Domain.Winner;
 import View.InputView;
 import View.OutputView;
 
@@ -39,6 +40,7 @@ public class RaceController {
             cars.moveAll();
             outputView.outputResult(cars);
         }
-        //outputView.outputWinner(cars);
+        Winner winner = new Winner(cars.getCars());
+        outputView.outputWinner(winner.getWinner());
     }
 }

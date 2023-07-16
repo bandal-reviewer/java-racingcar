@@ -22,4 +22,8 @@ public class Winner {
                 .max()
                 .orElse(MIN_POSITION);
     }
+
+    public List<Car> getWinner() {
+        return winner;
+    }
 }
