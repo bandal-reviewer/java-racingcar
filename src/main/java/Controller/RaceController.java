@@ -10,9 +10,16 @@ public class RaceController {
     private final InputView inputView = new InputView();
 
     public void run() {
+        try {
+            startRacing();
+        } catch (Exception exception) {
+            outputView.outputExceptionMessage(exception.getMessage());
+        }
+    }
+
+    public void startRacing() {
         Cars cars = getCars();
         int tryCount = getTryCount();
-
     }
 
     public Cars getCars() {
