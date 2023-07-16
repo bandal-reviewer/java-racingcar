@@ -1,5 +1,7 @@
 package Controller;
 
+import Domain.Cars;
+import Domain.TryCount;
 import View.InputView;
 import View.OutputView;
 
@@ -8,10 +10,18 @@ public class RaceController {
     private final InputView inputView = new InputView();
 
     public void run() {
-        outputView.outputCarNames();
-        String carNames = inputView.inputCarNames();
+        Cars cars = getCars();
+        int tryCount = getTryCount();
 
+    }
+
+    public Cars getCars() {
+        outputView.outputCarNames();
+        return new Cars(inputView.inputCarNames());
+    }
+
+    public int getTryCount() {
         outputView.outputTryCount();
-        String tryCount = inputView.inputTryCount();
+        return new TryCount(inputView.inputTryCount()).getCount();
     }
 }

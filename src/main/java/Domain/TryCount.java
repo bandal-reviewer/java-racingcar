@@ -20,7 +20,7 @@ public class TryCount {
             throw new IllegalArgumentException("[Error] 시도할 횟수는 1회 이상으로 작성해야 합니다.");
     }
 
-//    public int getCount() {
-//        return count;
-//    }
+    public int getCount() {
+        return count;
+    }
 }
