@@ -11,7 +11,7 @@ public class TryCountTest {
 
     @DisplayName("시도할 횟수를 0회로 작성하면 예외가 발생한다.")
     @Test
-    public void tryCountTest() {
+    public void tryCountRangeTest() {
         // given
         final String testTryCount = "0";
 
