@@ -48,4 +48,18 @@ public class CarTest {
         // then
         assertThat(car.position).isEqualTo(position);
     }
+
+    @DisplayName("자동차는 4 미만의 값을 받으면 멈춘다.")
+    @Test
+    public void carStopTest() {
+        // given
+        final int position = 0;
+        final Car car = new Car("메르세데스");
+
+        // when
+        car.move(3);
+
+        // then
+        assertThat(car.position).isEqualTo(position);
+    }
 }
