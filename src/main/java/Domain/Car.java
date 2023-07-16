@@ -4,6 +4,7 @@ public class Car {
     private static final int MAX_CAR_NAME_LENGTH = 5;
     private static final int MIN_CAR_NAME_LENGTH = 1;
     private static final int CAR_MOVE_LENGTH = 1;
+    private static final int MIN_RANDOM_NUMBER = 4;
 
     public final String name;
     public int position;
@@ -22,7 +23,7 @@ public class Car {
     }
 
     public void move(int randomNumber) {
-        if (randomNumber >= 4)
+        if (randomNumber >= MIN_RANDOM_NUMBER)
             this.position += CAR_MOVE_LENGTH;
     }
 }
