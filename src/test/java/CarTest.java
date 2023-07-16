@@ -1,6 +1,8 @@
 import Domain.Car;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
@@ -20,14 +22,19 @@ public class CarTest {
     }
 
     @DisplayName("자동차의 이름은 5자를 초과할 수 없다.")
-    @Test
-    public void carNameLengthTest() {
+    @ValueSource(strings = {"", "Mercedes"})
+    @ParameterizedTest
+    public void carNameLengthTest(String carName) {
         // given
-        final String carName = "Mercedes";
 
-        // when, then
+        // when
+        // then
         assertThatThrownBy(() -> new Car(carName))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("[Error]");
     }
+
+//    @DisplayName("")
+//    @Test
+//    public void
 }
