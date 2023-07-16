@@ -12,8 +12,11 @@ public class Car {
 
     private final Map<String, Car> carCache = new HashMap<>();
 
-    public final String name;
+    public String name;
     public int position;
+
+    public Car() {
+    }
 
     private Car(String name) {
         validateCarNameLength(name);

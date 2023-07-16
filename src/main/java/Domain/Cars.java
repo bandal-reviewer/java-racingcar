@@ -7,10 +7,12 @@ import java.util.List;
 public class Cars {
     private static final String CLASSIFICATION_SYMBOL = ",";
 
-    //private final List<Car> cars;
+    private final Car car = new Car();
 
-    public Cars() {
-        //this.cars = generateCars(convertCarNamesToList(carNames));
+    private final List<Car> cars;
+
+    public Cars(String carNames) {
+        this.cars = generateCars(convertCarNamesToList(carNames));
     }
 
     public List<String> convertCarNamesToList(String carNames) {
@@ -19,11 +21,15 @@ public class Cars {
         );
     }
 
-//    public List<Car> generateCars(List<String> carNameList) {
-//        List<Car> cars = new ArrayList<>();
-//        for (String carName : carNameList) {
-//            cars.add(new Car(carName.trim()));
-//        }
-//        return cars;
-//    }
+    public List<Car> generateCars(List<String> carNameList) {
+        List<Car> cars = new ArrayList<>();
+        for (String carName : carNameList) {
+            cars.add(car.from(carName.trim()));
+        }
+        return cars;
+    }
+
+    public List<Car> getCars() {
+        return cars;
+    }
 }
