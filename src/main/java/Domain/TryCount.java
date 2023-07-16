@@ -1,6 +1,7 @@
 package Domain;
 
 public class TryCount {
+    private static final int MIN_TRY_COUNT_RANGE = 0;
     final int count;
 
     public TryCount(String count) {
@@ -15,7 +16,7 @@ public class TryCount {
     }
 
     public void validateCountRange(String count) {
-        if (Integer.parseInt(count) == 0)
+        if (Integer.parseInt(count) <= MIN_TRY_COUNT_RANGE)
             throw new IllegalArgumentException("[Error] 시도할 횟수는 1회 이상으로 작성해야 합니다.");
     }
 
