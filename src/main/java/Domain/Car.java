@@ -21,7 +21,8 @@ public class Car {
             throw new IllegalArgumentException("[Error] 자동차 이름은 5자를 초과할 수 없습니다.");
     }
 
-    public void move() {
-        this.position += CAR_MOVE_LENGTH;
+    public void move(int randomNumber) {
+        if (randomNumber >= 4)
+            this.position += CAR_MOVE_LENGTH;
     }
 }
