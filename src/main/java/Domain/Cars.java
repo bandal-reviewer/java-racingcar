@@ -8,6 +8,7 @@ public class Cars {
     private static final String CLASSIFICATION_SYMBOL = ",";
 
     private final Car car = new Car();
+    private final RandomNumber randomNumber = new RandomNumber();
 
     private final List<Car> cars;
 
@@ -27,6 +28,12 @@ public class Cars {
             cars.add(car.from(carName.trim()));
         }
         return cars;
+    }
+
+    public void reportOneResult() {
+        for (Car car : cars) {
+            car.move(randomNumber.generateRandomNumber());
+        }
     }
 
     public List<Car> getCars() {
