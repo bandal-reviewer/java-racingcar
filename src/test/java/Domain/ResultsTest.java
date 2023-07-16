@@ -17,6 +17,6 @@ public class ResultsTest {
         final Results results = new Results(tryCount, cars);
 
         // then
-        assertThat(results.results.size()).isEqualTo(tryCount);
+        assertThat(results.getResults()).hasSize(tryCount);
     }
 }
