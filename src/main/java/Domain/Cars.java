@@ -7,8 +7,6 @@ import java.util.List;
 public class Cars {
     private static final String CLASSIFICATION_SYMBOL = ",";
 
-    private final RandomNumber randomNumber = new RandomNumber();
-
     private final List<Car> cars;
 
     public Cars(String carNames) {
@@ -29,9 +27,9 @@ public class Cars {
         return cars;
     }
 
-    public void reportOneResult() {
+    public void moveAll() {
         for (Car car : cars) {
-            car.move(randomNumber.generateRandomNumber());
+            car.move(RandomNumber.generateRandomNumber());
         }
     }
 

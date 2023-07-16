@@ -1,7 +1,6 @@
 package Controller;
 
 import Domain.Cars;
-import Domain.Results;
 import Domain.TryCount;
 import View.InputView;
 import View.OutputView;
@@ -21,8 +20,7 @@ public class RaceController {
     public void startRacing() {
         Cars cars = getCars();
         int tryCount = getTryCount();
-        Results results = new Results(tryCount, cars);
-        outputView.outputResult(results);
+        printResult(cars, tryCount);
     }
 
     public Cars getCars() {
@@ -33,5 +31,14 @@ public class RaceController {
     public int getTryCount() {
         outputView.outputTryCount();
         return new TryCount(inputView.inputTryCount()).getCount();
+    }
+
+    public void printResult(Cars cars, int tryCount) {
+        outputView.outputResultUI();
+        for (int i = 0; i < tryCount; i++) {
+            cars.moveAll();
+            outputView.outputResult(cars);
+        }
+        //outputView.outputWinner(cars);
     }
 }

@@ -1,8 +1,7 @@
 package View;
 
 import Domain.Car;
-import Domain.Result;
-import Domain.Results;
+import Domain.Cars;
 
 public class OutputView {
     private static final String RESULT_SYMBOL = "-";
@@ -19,18 +18,21 @@ public class OutputView {
         System.out.println("시도할 회수는 몇회인가요?");
     }
 
-    public void outputResult(Results results) {
+    public void outputResultUI() {
         System.out.println("실행 결과");
-        for (Result result : results.getResults()) {
-            outputOneCarResult(result);
-            System.out.println();
+    }
+    public void outputResult(Cars cars) {
+        for (Car car : cars.getCars()) {
+            outputOneResult(car);
         }
-        System.out.println("최종 우승자: ");
+        System.out.println();
     }
 
-    public void outputOneCarResult(Result result) {
-        for (Car car : result.getResult().keySet()) {
-            System.out.println(car.name + " : " + RESULT_SYMBOL.repeat(result.getResult().get(car)));
-        }
+    public void outputOneResult(Car car) {
+        System.out.println(car.name + " : " + RESULT_SYMBOL.repeat(car.position));
+    }
+
+    public void outputWinner() {
+        System.out.println("최종 우승자: ");
     }
 }
