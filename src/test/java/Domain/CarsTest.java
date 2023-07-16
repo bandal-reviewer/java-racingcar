@@ -10,7 +10,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CarsTest {
-    @DisplayName("자동차 이름은 쉼표(,)로 구분할 수 있다.")
+    @DisplayName("자동차 이름은 쉼표(,)로 구분한다.")
     @Test
     public void carsClassificationSymbolTest() {
         // given
