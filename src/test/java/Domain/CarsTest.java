@@ -25,6 +25,6 @@ public class CarsTest {
         final Cars cars = new Cars(carNames);
 
         // then
-        assertThat(cars.getCars()).usingRecursiveComparison().isEqualTo(carNameList);
+        assertThat(cars.getCars()).isEqualTo(carNameList);
     }
 }
