@@ -1,5 +1,7 @@
 package Domain;
 
+import java.util.Objects;
+
 public class TryCount {
     private static final int MIN_TRY_COUNT_RANGE = 0;
     final int count;
@@ -22,5 +24,18 @@ public class TryCount {
 
     public int getCount() {
         return count;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        final TryCount tryCount = (TryCount) o;
+        return count == tryCount.count;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(count);
     }
 }

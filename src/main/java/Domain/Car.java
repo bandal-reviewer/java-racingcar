@@ -1,5 +1,7 @@
 package Domain;
 
+import java.util.Objects;
+
 public class Car {
     private static final int MAX_CAR_NAME_LENGTH = 5;
     private static final int MIN_CAR_NAME_LENGTH = 1;
@@ -29,5 +31,19 @@ public class Car {
 
     public int getPosition() {
         return position;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        final Car car = (Car) o;
+        return name.equals(car.name)
+                && position == car.position;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, position);
     }
 }
