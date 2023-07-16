@@ -1,7 +1,6 @@
 package Domain;
 
 import java.util.LinkedHashMap;
-import java.util.Map;
 
 public class Result {
     final LinkedHashMap<Car, Integer> result = new LinkedHashMap<>();
@@ -17,7 +16,7 @@ public class Result {
         }
     }
 
-    public Map<Car, Integer> getResult() {
+    public LinkedHashMap<Car, Integer> getResult() {
         return result;
     }
 }
