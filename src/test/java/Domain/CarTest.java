@@ -9,6 +9,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 public class CarTest {
+    private final Car car = new Car();
+
     @DisplayName("자동차는 이름을 가진다.")
     @Test
     public void carNameTest() {
@@ -16,10 +18,10 @@ public class CarTest {
         final String carName = "메르세데스";
 
         // when
-        final Car car = new Car(carName);
+        final Car testCar = car.from(carName);
 
         // then
-        assertThat(car.name).isEqualTo(carName);
+        assertThat(testCar.name).isEqualTo(carName);
     }
 
     @DisplayName("자동차의 이름은 5자를 초과할 수 없다.")
@@ -30,7 +32,7 @@ public class CarTest {
 
         // when
         // then
-        assertThatThrownBy(() -> new Car(carName))
+        assertThatThrownBy(() -> car.from(carName))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("[Error]");
     }
@@ -40,13 +42,13 @@ public class CarTest {
     public void carMoveTest() {
         // given
         final int position = 1;
-        final Car car = new Car("메르세데스");
+        final Car testCar = car.from("메르세데스");
 
         // when
         car.move(4);
 
         // then
-        assertThat(car.position).isEqualTo(position);
+        assertThat(testCar.position).isEqualTo(position);
     }
 
     @DisplayName("자동차는 4 미만의 값을 받으면 멈춘다.")
@@ -54,12 +56,12 @@ public class CarTest {
     public void carStopTest() {
         // given
         final int position = 0;
-        final Car car = new Car("메르세데스");
+        final Car testCar = car.from("메르세데스");
 
         // when
         car.move(3);
 
         // then
-        assertThat(car.position).isEqualTo(position);
+        assertThat(testCar.position).isEqualTo(position);
     }
 }
