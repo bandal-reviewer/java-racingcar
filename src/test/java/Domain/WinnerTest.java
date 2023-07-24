@@ -17,6 +17,8 @@ public class WinnerTest {
         final Car car1 = new Car("메르세데스");
         final Car car2 = new Car("아반떼");
         final List<Car> winnerList = new ArrayList<>(Arrays.asList(car1, car2));
+        car1.move(4);
+        car2.move(4);
 
         // when
         Winner winner = new Winner(winnerList);
