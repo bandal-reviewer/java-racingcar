@@ -17,7 +17,7 @@ public class Car {
         this.position = 0;
     }
 
-    public void validateCarNameLength(String name) {
+    private void validateCarNameLength(String name) {
         int nameLength = name.trim().length();
         if (nameLength > MAX_CAR_NAME_LENGTH)
             throw new IllegalArgumentException("[Error] 자동차 이름은 5자를 초과할 수 없습니다.");

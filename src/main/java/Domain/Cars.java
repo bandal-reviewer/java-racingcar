@@ -13,13 +13,13 @@ public class Cars {
         this.cars = generateCars(convertCarNamesToList(carNames));
     }
 
-    public List<String> convertCarNamesToList(String carNames) {
+    private List<String> convertCarNamesToList(String carNames) {
         return new ArrayList<>(
                 Arrays.asList(carNames.split(SEPARATOR))
         );
     }
 
-    public List<Car> generateCars(List<String> carNameList) {
+    private List<Car> generateCars(List<String> carNameList) {
         List<Car> cars = new ArrayList<>();
         for (String carName : carNameList) {
             cars.add(new Car(carName.trim()));

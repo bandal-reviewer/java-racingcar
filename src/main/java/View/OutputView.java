@@ -35,7 +35,7 @@ public class OutputView {
         System.out.println();
     }
 
-    public void outputOneResult(Car car) {
+    private void outputOneResult(Car car) {
         System.out.println(car.name + " : " + RESULT_SYMBOL.repeat(car.position));
     }
 

@@ -18,23 +18,23 @@ public class RaceController {
         }
     }
 
-    public void startRacing() {
+    private void startRacing() {
         Cars cars = getCars();
         int tryCount = getTryCount();
         printResult(cars, tryCount);
     }
 
-    public Cars getCars() {
+    private Cars getCars() {
         outputView.outputCarNames();
         return new Cars(inputView.inputCarNames());
     }
 
-    public int getTryCount() {
+    private int getTryCount() {
         outputView.outputTryCount();
         return new TryCount(inputView.inputTryCount()).getCount();
     }
 
-    public void printResult(Cars cars, int tryCount) {
+    private void printResult(Cars cars, int tryCount) {
         outputView.outputResultUI();
         for (int i = 0; i < tryCount; i++) {
             cars.moveAll();
@@ -43,7 +43,7 @@ public class RaceController {
         outputView.outputWinner(getWinner(cars));
     }
 
-    public Winner getWinner(Cars cars) {
+    private Winner getWinner(Cars cars) {
         return new Winner(cars.getCars());
     }
 }

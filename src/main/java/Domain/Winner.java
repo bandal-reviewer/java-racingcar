@@ -16,7 +16,7 @@ public class Winner {
                 .collect(Collectors.toList());
     }
 
-    public int getMaxPosition(List<Car> cars) {
+    private int getMaxPosition(List<Car> cars) {
         return cars.stream()
                 .mapToInt(Car::getPosition)
                 .max()
