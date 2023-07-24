@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Cars {
-    private static final String CLASSIFICATION_SYMBOL = ",";
+    private static final String SEPARATOR = ",";
 
     private final List<Car> cars;
 
@@ -15,7 +15,7 @@ public class Cars {
 
     public List<String> convertCarNamesToList(String carNames) {
         return new ArrayList<>(
-                Arrays.asList(carNames.split(CLASSIFICATION_SYMBOL))
+                Arrays.asList(carNames.split(SEPARATOR))
         );
     }
 
