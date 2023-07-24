@@ -13,13 +13,10 @@ public class WinnerTest {
     @Test
     public void winnerHasMaxPositionTest() {
         // given
-        final Car car1 = new Car("메르세데스");
-        final Car car2 = new Car("아반떼");
-        final Car car3 = new Car("포르쉐");
+        final Car car1 = new Car("메르세데스", 0);
+        final Car car2 = new Car("아반떼", 1);
+        final Car car3 = new Car("포르쉐", 2);
         final List<Car> cars = new ArrayList<>(List.of(car1, car2, car3));
-        car2.move(4);
-        car3.move(4);
-        car3.move(4);
 
         // when
         Winner winner = new Winner(cars);
@@ -32,13 +29,11 @@ public class WinnerTest {
     @Test
     public void winnerMoreThanOneTest() {
         // given
-        final Car car1 = new Car("메르세데스");
-        final Car car2 = new Car("아반떼");
-        final Car car3 = new Car("포르쉐");
+        final Car car1 = new Car("메르세데스", 1);
+        final Car car2 = new Car("아반떼", 1);
+        final Car car3 = new Car("포르쉐", 0);
         final List<Car> carList = new ArrayList<>(List.of(car1, car2, car3));
         final List<Car> winnerList = new ArrayList<>(List.of(car1, car2));
-        car1.move(4);
-        car2.move(4);
 
         // when
         Winner winner = new Winner(carList);
