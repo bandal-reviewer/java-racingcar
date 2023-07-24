@@ -9,12 +9,16 @@ public class Car {
     private static final int MIN_RANDOM_NUMBER = 4;
 
     public final String name;
-    public int position;
+    public int position = 0;
+
+    public Car(String name, int position) {
+        this(name);
+        this.position = position;
+    }
 
     public Car(String name) {
         validateCarNameLength(name);
         this.name = name;
-        this.position = 0;
     }
 
     private void validateCarNameLength(String name) {
