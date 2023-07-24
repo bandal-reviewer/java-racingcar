@@ -33,11 +33,11 @@ public class WinnerTest {
         final Car car2 = new Car("아반떼");
         final Car car3 = new Car("포르쉐");
         final List<Car> cars = new ArrayList<>(List.of(car1, car2, car3));
-
-        // when
         car2.move(4);
         car3.move(4);
         car3.move(4);
+
+        // when
         Winner winner = new Winner(cars);
 
         // then
