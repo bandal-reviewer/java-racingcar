@@ -22,8 +22,8 @@ public class CarTest {
         assertThat(testCar.name).isEqualTo(carName);
     }
 
-    @DisplayName("자동차의 이름은 5자를 초과할 수 없다.")
-    @ValueSource(strings = {"", "Mercedes"})
+    @DisplayName("자동차의 이름은 빈칸일 수 없으며, 5자를 초과할 수 없다.")
+    @ValueSource(strings = {"", " ", "Mercedes"})
     @ParameterizedTest
     public void carNameLengthTest(String carName) {
         // given
