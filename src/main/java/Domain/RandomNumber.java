@@ -2,10 +2,11 @@ package Domain;
 
 import java.util.Random;
 
-public class RandomNumber {
+public class RandomNumber implements NumberGenerator {
     private static final int MAX_RANDOM_NUMBER_RANGE = 10;
 
-    public static int generateRandomNumber() {
+    @Override
+    public int generateNumber() {
         Random random = new Random();
         return random.nextInt(MAX_RANDOM_NUMBER_RANGE);
     }
