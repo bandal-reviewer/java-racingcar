@@ -1,5 +1,7 @@
 package Domain;
 
+import Generator.NumberGenerator;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -27,9 +29,9 @@ public class Cars {
         return cars;
     }
 
-    public void moveAll() {
+    public void moveAll(NumberGenerator numberGenerator) {
         for (Car car : cars) {
-            car.move(RandomNumber.generateRandomNumber());
+            car.move(numberGenerator.generateNumber());
         }
     }
 
