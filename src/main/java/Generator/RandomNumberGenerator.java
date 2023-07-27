@@ -1,8 +1,8 @@
-package Domain;
+package Generator;
 
 import java.util.Random;
 
-public class RandomNumber implements NumberGenerator {
+public class RandomNumberGenerator implements NumberGenerator {
     private static final int MAX_RANDOM_NUMBER_RANGE = 10;
 
     @Override
