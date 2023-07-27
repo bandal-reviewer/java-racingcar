@@ -1,6 +1,7 @@
 package Controller;
 
 import Domain.Cars;
+import Generator.RandomNumberGenerator;
 import Domain.TryCount;
 import Domain.Winner;
 import View.InputView;
@@ -9,6 +10,7 @@ import View.OutputView;
 public class RaceController {
     private final OutputView outputView = new OutputView();
     private final InputView inputView = new InputView();
+    private final RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
 
     public void run() {
         try {
@@ -37,7 +39,7 @@ public class RaceController {
     private void printResult(Cars cars, int tryCount) {
         outputView.outputResultUI();
         for (int i = 0; i < tryCount; i++) {
-            cars.moveAll();
+            cars.moveAll(randomNumberGenerator);
             outputView.outputResult(cars);
         }
         outputView.outputWinner(getWinner(cars));
