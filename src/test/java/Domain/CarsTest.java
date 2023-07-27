@@ -52,4 +52,28 @@ public class CarsTest {
             return 4;
         }
     }
+
+    @DisplayName("NumberGenerator의 generateNumber()가 4 미만의 값을 반환하면 자동차는 멈춘다.")
+    @Test
+    public void carsStopTest() {
+        // given
+        final String carNames = "메르세데스,포르쉐,아반떼";
+        final Cars cars = new Cars(carNames);
+        TestLowNumberGenerator testLowNumberGenerator = new TestLowNumberGenerator();
+
+        // when
+        cars.moveAll(testLowNumberGenerator);
+
+        // then
+        assertThat(cars.getCars().get(0).position).isEqualTo(0);
+        assertThat(cars.getCars().get(1).position).isEqualTo(0);
+        assertThat(cars.getCars().get(2).position).isEqualTo(0);
+    }
+
+    static class TestLowNumberGenerator implements NumberGenerator {
+        @Override
+        public int generateNumber() {
+            return 3;
+        }
+    }
 }
