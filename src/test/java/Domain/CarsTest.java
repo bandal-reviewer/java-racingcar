@@ -1,5 +1,6 @@
 package Domain;
 
+import Generator.NumberGenerator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -26,5 +27,29 @@ public class CarsTest {
 
         // then
         assertThat(cars.getCars()).isEqualTo(carNameList);
+    }
+
+    @DisplayName("NumberGenerator의 generateNumber()가 4 이상의 값을 반환하면 자동차는 전진한다.")
+    @Test
+    public void carsMoveTest() {
+        // given
+        final String carNames = "메르세데스,포르쉐,아반떼";
+        final Cars cars = new Cars(carNames);
+        TestHighNumberGenerator testHighNumberGenerator = new TestHighNumberGenerator();
+
+        // when
+        cars.moveAll(testHighNumberGenerator);
+
+        // then
+        assertThat(cars.getCars().get(0).position).isEqualTo(1);
+        assertThat(cars.getCars().get(1).position).isEqualTo(1);
+        assertThat(cars.getCars().get(2).position).isEqualTo(1);
+    }
+
+    static class TestHighNumberGenerator implements NumberGenerator {
+        @Override
+        public int generateNumber() {
+            return 4;
+        }
     }
 }
